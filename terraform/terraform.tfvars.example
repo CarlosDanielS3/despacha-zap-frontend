@@ -1,0 +1,22 @@
+# AWS region
+aws_region = "us-east-1"
+
+# Project configuration
+project_name = "despacha-zap"
+environment  = "production"
+
+# API Gateway configuration
+api_gateway_url   = "your-api-gateway.execute-api.region.amazonaws.com"
+api_gateway_stage = "production"
+
+# API Key (use environment variable or AWS Secrets Manager in production)
+# Set via: export TF_VAR_api_key="your-api-key"
+# api_key = "" # DO NOT commit this value!
+
+# Optional: Custom domain
+# domain_name = "despachazap.com.br"
+
+# Cost Monitoring Configuration
+cost_alert_email     = "your-email@example.com"
+monthly_budget_limit = "10"   # USD per month (ultra low)
+daily_budget_limit   = "1"    # USD per day (ultra low)
