@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 15%;
+
+    --primary: 142 50% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 145 40% 96%;
+    --secondary-foreground: 142 50% 30%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 210 10% 45%;
+
+    --accent: 205 85% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 142 50% 35%;
+
+    --radius: 0.75rem;
+
+    /* Custom colors */
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(142, 50%, 35%) 0%, hsl(142, 60%, 28%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(205, 85%, 45%) 0%, hsl(205, 90%, 38%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(142, 50%, 97%) 0%, hsl(0, 0%, 100%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(142, 30%, 98%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(210 20% 15% / 0.08);
+    --shadow-medium: 0 8px 30px -6px hsl(210 20% 15% / 0.12);
+    --shadow-strong: 0 12px 40px -8px hsl(210 20% 15% / 0.18);
+    --shadow-primary: 0 8px 30px -6px hsl(142 50% 35% / 0.35);
+    --shadow-accent: 0 8px 30px -6px hsl(205 85% 45% / 0.35);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 25% 8%;
+    --foreground: 210 20% 98%;
+
+    --card: 210 25% 12%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 210 25% 12%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 142 55% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 25% 18%;
+    --secondary-foreground: 142 55% 45%;
+
+    --muted: 210 25% 18%;
+    --muted-foreground: 210 15% 60%;
+
+    --accent: 205 85% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 25% 20%;
+    --input: 210 25% 20%;
+    --ring: 142 55% 45%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+
+  .shadow-primary {
+    box-shadow: var(--shadow-primary);
+  }
+
+  .shadow-accent {
+    box-shadow: var(--shadow-accent);
+  }
+
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  .plate-input {
+    @apply uppercase tracking-[0.3em] font-bold text-xl text-center;
+    letter-spacing: 0.2em;
+  }
+}
